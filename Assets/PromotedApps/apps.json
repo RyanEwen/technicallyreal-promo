@@ -1,0 +1,27 @@
+{
+  "generatedUtc": "2026-07-06T04:36:26Z",
+  "publisher": "TechnicallyReal",
+  "apps": [
+    {
+      "id": "9PB5FJ08PNVJ",
+      "name": "Repilot",
+      "blurb": "Make your Copilot key actually useful.",
+      "packageFamilyName": "27766TechnicallyReal.CopilotKeyRemapper_gfb69tsnc4jnp",
+      "icon": "9PB5FJ08PNVJ.png"
+    },
+    {
+      "id": "9P3ZZBDQ6PJF",
+      "name": "Little Launcher",
+      "blurb": "Little Launcher lives in the Windows system tray and/or taskbar. Clicking its icon opens a flyout with app and website shortcuts. It also provides launcher sharing and settings...",
+      "packageFamilyName": "27766TechnicallyReal.LittleLauncher_gfb69tsnc4jnp",
+      "icon": "9P3ZZBDQ6PJF.png"
+    },
+    {
+      "id": "9MWC6165N7DH",
+      "name": "ImmichDrive",
+      "blurb": "ImmichDrive brings your self-hosted Immich photo and video library straight into Windows File Explorer as a native cloud drive. Your whole timeline appears as files you can...",
+      "packageFamilyName": "27766TechnicallyReal.ImmichDrive_gfb69tsnc4jnp",
+      "icon": "9MWC6165N7DH.png"
+    }
+  ]
+}

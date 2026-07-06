@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shared-items import for the "Our other apps" cross-promo page.
+     Consume from a WinUI 3 app csproj with:
+       <Import Project="external\promo\PromotedApps.projitems" Label="Shared" />
+     This links the page source into the consuming project and bundles the
+     build-time-generated Store data + icons under Assets\PromotedApps. -->
+<Project>
+  <PropertyGroup>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>5f4f5f9e-16f0-4e58-9be5-8b2f6f0a7c31</SharedGUID>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Views\PromotedAppsPage.xaml">
+      <Link>PromotedApps\PromotedAppsPage.xaml</Link>
+    </Page>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PromotedAppsPage.xaml.cs">
+      <DependentUpon>PromotedAppsPage.xaml</DependentUpon>
+      <Link>PromotedApps\PromotedAppsPage.xaml.cs</Link>
+    </Compile>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\PromotedApps\**\*.*">
+      <Link>Assets\PromotedApps\%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
