@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-07-06T04:36:26Z",
+  "generatedUtc": "2026-08-20T05:11:57Z",
   "publisher": "TechnicallyReal",
   "apps": [
     {
@@ -12,16 +12,23 @@
     {
       "id": "9P3ZZBDQ6PJF",
       "name": "Little Launcher",
-      "blurb": "Little Launcher lives in the Windows system tray and/or taskbar. Clicking its icon opens a flyout with app and website shortcuts. It also provides launcher sharing and settings...",
+      "blurb": "Little Launcher puts your apps, websites and web pages one click away, in a flyout that opens from the system tray or the taskbar.",
       "packageFamilyName": "27766TechnicallyReal.LittleLauncher_gfb69tsnc4jnp",
       "icon": "9P3ZZBDQ6PJF.png"
     },
     {
       "id": "9MWC6165N7DH",
-      "name": "ImmichDrive",
-      "blurb": "ImmichDrive brings your self-hosted Immich photo and video library straight into Windows File Explorer as a native cloud drive. Your whole timeline appears as files you can...",
+      "name": "Drive for Immich",
+      "blurb": "Drive for Immich brings your self-hosted Immich photo and video library straight into Windows File Explorer as a native cloud drive. Your whole timeline appears as files you can...",
       "packageFamilyName": "27766TechnicallyReal.ImmichDrive_gfb69tsnc4jnp",
       "icon": "9MWC6165N7DH.png"
+    },
+    {
+      "id": "9PCX2XGQ7CJS",
+      "name": "Persistent",
+      "blurb": "Reminders that don't give up.",
+      "packageFamilyName": "27766TechnicallyReal.Persistent_gfb69tsnc4jnp",
+      "icon": "9PCX2XGQ7CJS.png"
     }
   ]
 }
