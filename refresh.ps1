@@ -48,13 +48,29 @@ foreach ($id in $ids.productIds) {
     if (-not $blurb) { $blurb = Get-BriefDescription $payload.Description }
 
     $apps += [ordered]@{
-        id                = $id
+        destination       = "ms-windows-store://pdp/?ProductId=$id"
+        actionLabel       = "View in Store"
         name              = $payload.Title
         blurb             = $blurb
         packageFamilyName = @($payload.PackageFamilyNames)[0]
         icon              = $iconFile
     }
     Write-Host "  -> $($payload.Title): $blurb"
+}
+
+# Web apps use explicit repository-owned metadata instead of Store listing data.
+foreach ($externalApp in @($ids.externalApps)) {
+    Write-Host "Fetching $($externalApp.name) icon ..."
+    Invoke-WebRequest $externalApp.iconUrl -OutFile (Join-Path $outDir $externalApp.icon) | Out-Null
+
+    $apps += [ordered]@{
+        destination       = $externalApp.destination
+        actionLabel       = $externalApp.actionLabel
+        name              = $externalApp.name
+        blurb             = $externalApp.blurb
+        packageFamilyName = $null
+        icon              = $externalApp.icon
+    }
 }
 
 $manifest = [ordered]@{

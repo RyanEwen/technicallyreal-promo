@@ -5,6 +5,16 @@
     "9MWC6165N7DH",
     "9PCX2XGQ7CJS"
   ],
+  "externalApps": [
+    {
+      "name": "PrintStream",
+      "blurb": "Manage your Bambu Lab printers, one or a whole farm, from any device.",
+      "destination": "https://printstream.app",
+      "actionLabel": "Visit website",
+      "iconUrl": "https://raw.githubusercontent.com/PrintStreamApp/printstream/main/apps/web/public/icon-192.png",
+      "icon": "printstream.png"
+    }
+  ],
   "blurbOverrides": {
   }
 }

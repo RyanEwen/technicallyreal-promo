@@ -1,34 +1,46 @@
 {
-  "generatedUtc": "2026-08-20T05:11:57Z",
+  "generatedUtc": "2026-09-12T16:11:25Z",
   "publisher": "TechnicallyReal",
   "apps": [
     {
-      "id": "9PB5FJ08PNVJ",
+      "destination": "ms-windows-store://pdp/?ProductId=9PB5FJ08PNVJ",
+      "actionLabel": "View in Store",
       "name": "Repilot",
       "blurb": "Make your Copilot key actually useful.",
       "packageFamilyName": "27766TechnicallyReal.CopilotKeyRemapper_gfb69tsnc4jnp",
       "icon": "9PB5FJ08PNVJ.png"
     },
     {
-      "id": "9P3ZZBDQ6PJF",
+      "destination": "ms-windows-store://pdp/?ProductId=9P3ZZBDQ6PJF",
+      "actionLabel": "View in Store",
       "name": "Little Launcher",
       "blurb": "Little Launcher puts your apps, websites and web pages one click away, in a flyout that opens from the system tray or the taskbar.",
       "packageFamilyName": "27766TechnicallyReal.LittleLauncher_gfb69tsnc4jnp",
       "icon": "9P3ZZBDQ6PJF.png"
     },
     {
-      "id": "9MWC6165N7DH",
+      "destination": "ms-windows-store://pdp/?ProductId=9MWC6165N7DH",
+      "actionLabel": "View in Store",
       "name": "Drive for Immich",
       "blurb": "Drive for Immich brings your self-hosted Immich photo and video library straight into Windows File Explorer as a native cloud drive. Your whole timeline appears as files you can...",
       "packageFamilyName": "27766TechnicallyReal.ImmichDrive_gfb69tsnc4jnp",
       "icon": "9MWC6165N7DH.png"
     },
     {
-      "id": "9PCX2XGQ7CJS",
+      "destination": "ms-windows-store://pdp/?ProductId=9PCX2XGQ7CJS",
+      "actionLabel": "View in Store",
       "name": "Persistent",
       "blurb": "Reminders that don't give up.",
       "packageFamilyName": "27766TechnicallyReal.Persistent_gfb69tsnc4jnp",
       "icon": "9PCX2XGQ7CJS.png"
+    },
+    {
+      "destination": "https://printstream.app",
+      "actionLabel": "Visit website",
+      "name": "PrintStream",
+      "blurb": "Manage your Bambu Lab printers, one or a whole farm, from any device.",
+      "packageFamilyName": null,
+      "icon": "printstream.png"
     }
   ]
 }

@@ -26,8 +26,8 @@
                                     <TextBlock Text="{Binding Name}" FontSize="14" FontWeight="Medium"/>
                                     <TextBlock Text="{Binding Blurb}" FontSize="12" Opacity="0.5" TextWrapping="Wrap"/>
                                 </StackPanel>
-                                <Button Grid.Column="2" Content="View in Store" Tag="{Binding ProductId}"
-                                        Click="ViewInStore_Click" VerticalAlignment="Center"/>
+                                <Button Grid.Column="2" Content="{Binding ActionLabel}" Tag="{Binding Destination}"
+                                        Click="OpenDestination_Click" VerticalAlignment="Center"/>
                             </Grid>
                         </Border>
                     </DataTemplate>
