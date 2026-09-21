@@ -6,7 +6,7 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel MaxWidth="1000" Margin="16">
             <TextBlock Text="Our other apps" FontSize="24" FontWeight="SemiBold" Margin="0,0,0,4"/>
-            <TextBlock Text="More from TechnicallyReal on the Microsoft Store."
+            <TextBlock Text="More from Dynamic Solutions Canada on the Microsoft Store."
                        FontSize="13" Opacity="0.6" Margin="0,0,0,16"/>
 
             <ItemsControl x:Name="AppList">

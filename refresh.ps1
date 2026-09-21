@@ -75,7 +75,7 @@ foreach ($externalApp in @($ids.externalApps)) {
 
 $manifest = [ordered]@{
     generatedUtc = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
-    publisher    = "TechnicallyReal"
+    publisher    = "Dynamic Solutions Canada"
     apps         = $apps
 }
 $json = $manifest | ConvertTo-Json -Depth 5

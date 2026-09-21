@@ -1,6 +1,6 @@
 # technicallyreal-promo
 
-Shared "Our other apps" page for TechnicallyReal's WinUI 3 apps. Each app bundles this
+Shared "Our other apps" page for Dynamic Solutions Canada's WinUI 3 apps. Each app bundles this
 as a git submodule; the page cross-promotes the publisher's Store and web apps
 and automatically hides the app it is running inside (matched by package family name).
 
