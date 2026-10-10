@@ -2,7 +2,7 @@
 #
 # Dev-side tool only: run it occasionally (e.g. when publishing a new app or before a
 # release), review the diff, and commit the result. Consuming apps bundle the generated
-# files and never touch the network at runtime.
+# files and refresh from the public manifest at runtime.
 #
 # NOTE: keep this file ASCII-only (see project conventions).
 
@@ -47,15 +47,26 @@ foreach ($id in $ids.productIds) {
     }
     if (-not $blurb) { $blurb = Get-BriefDescription $payload.Description }
 
+    $metadata = $ids.appOverrides.$id
+    if (-not $metadata.appId -or -not $metadata.links) {
+        throw "Missing appOverrides metadata for $id"
+    }
+
+    # Preserve publisher-approved names while Store listing updates catch up.
+    $name = $payload.Title
+    if ($metadata.name) { $name = $metadata.name }
+
     $apps += [ordered]@{
+        appId             = $metadata.appId
+        links             = @($metadata.links)
         destination       = "ms-windows-store://pdp/?ProductId=$id"
         actionLabel       = "View in Store"
-        name              = $payload.Title
+        name              = $name
         blurb             = $blurb
         packageFamilyName = @($payload.PackageFamilyNames)[0]
         icon              = $iconFile
     }
-    Write-Host "  -> $($payload.Title): $blurb"
+    Write-Host "  -> ${name}: $blurb"
 }
 
 # Web apps use explicit repository-owned metadata instead of Store listing data.
@@ -64,6 +75,8 @@ foreach ($externalApp in @($ids.externalApps)) {
     Invoke-WebRequest $externalApp.iconUrl -OutFile (Join-Path $outDir $externalApp.icon) | Out-Null
 
     $apps += [ordered]@{
+        appId             = $externalApp.appId
+        links             = @($externalApp.links)
         destination       = $externalApp.destination
         actionLabel       = $externalApp.actionLabel
         name              = $externalApp.name
@@ -73,10 +86,24 @@ foreach ($externalApp in @($ids.externalApps)) {
     }
 }
 
+# Publish one canonical order for every consumer, including older Windows apps
+# that simply enumerate the manifest. Refuse incomplete or duplicate ordering.
+$orderedApps = @()
+foreach ($appId in @($ids.appOrder)) {
+    $matches = @($apps | Where-Object { $_.appId -eq $appId })
+    if ($matches.Count -ne 1 -or $appId -in @($orderedApps | ForEach-Object { $_.appId })) {
+        throw "Invalid or duplicate appOrder entry: $appId"
+    }
+    $orderedApps += $matches[0]
+}
+if ($orderedApps.Count -ne $apps.Count) {
+    throw "appOrder must include every app exactly once"
+}
+
 $manifest = [ordered]@{
     generatedUtc = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
     publisher    = "Dynamic Solutions Canada"
-    apps         = $apps
+    apps         = $orderedApps
 }
 $json = $manifest | ConvertTo-Json -Depth 5
 Set-Content -Path (Join-Path $outDir "apps.json") -Value $json -Encoding UTF8

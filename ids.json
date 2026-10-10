@@ -1,20 +1,99 @@
 {
   "productIds": [
-    "9PB5FJ08PNVJ",
+    "9PCX2XGQ7CJS",
     "9P3ZZBDQ6PJF",
     "9MWC6165N7DH",
-    "9PCX2XGQ7CJS"
+    "9PB5FJ08PNVJ"
   ],
   "externalApps": [
     {
       "name": "PrintStream",
-      "blurb": "Manage your Bambu Lab printers, one or a whole farm, from any device.",
+      "blurb": "Manage your 3D printers, one or a whole farm, from any device.",
       "destination": "https://printstream.app",
       "actionLabel": "Visit website",
       "iconUrl": "https://raw.githubusercontent.com/PrintStreamApp/printstream/main/apps/web/public/icon-192.png",
-      "icon": "printstream.png"
+      "icon": "printstream.png",
+      "appId": "printstream",
+      "links": [
+        {
+          "platform": "Android",
+          "url": "https://play.google.com/store/apps/details?id=app.printstream",
+          "label": "Google Play"
+        },
+        {
+          "platform": "Windows",
+          "url": "https://apps.microsoft.com/detail/9N2CJ8BB9RTZ",
+          "label": "Microsoft Store"
+        },
+        {
+          "platform": "Web",
+          "url": "https://printstream.app",
+          "label": "Visit website"
+        }
+      ]
     }
   ],
   "blurbOverrides": {
-  }
+    "9MWC6165N7DH": "ImmichDrive brings your self-hosted Immich photo and video library straight into Windows File Explorer as a native cloud drive. Your whole timeline appears as files you can..."
+  },
+  "appOverrides": {
+    "9PB5FJ08PNVJ": {
+      "appId": "repilot",
+      "links": [
+        {
+          "platform": "Windows",
+          "url": "https://apps.microsoft.com/detail/9PB5FJ08PNVJ",
+          "label": "Microsoft Store"
+        }
+      ]
+    },
+    "9P3ZZBDQ6PJF": {
+      "appId": "little-launcher",
+      "links": [
+        {
+          "platform": "Windows",
+          "url": "https://apps.microsoft.com/detail/9P3ZZBDQ6PJF",
+          "label": "Microsoft Store"
+        }
+      ]
+    },
+    "9MWC6165N7DH": {
+      "appId": "drive-for-immich",
+      "links": [
+        {
+          "platform": "Windows",
+          "url": "https://apps.microsoft.com/detail/9MWC6165N7DH",
+          "label": "Microsoft Store"
+        }
+      ],
+      "name": "ImmichDrive"
+    },
+    "9PCX2XGQ7CJS": {
+      "appId": "persistent",
+      "links": [
+        {
+          "platform": "Windows",
+          "url": "https://apps.microsoft.com/detail/9PCX2XGQ7CJS",
+          "label": "Microsoft Store"
+        },
+        {
+          "platform": "Android",
+          "url": "https://play.google.com/store/apps/details?id=ca.dynamicsolutions.persistent",
+          "label": "Google Play"
+        },
+        {
+          "platform": "Web",
+          "url": "https://persistent.dynamic-solutions.ca",
+          "label": "Visit website"
+        }
+      ]
+    }
+  },
+  "appOrder": [
+    "printstream",
+    "persistent",
+    "little-launcher",
+    "drive-for-immich",
+    "repilot"
+  ]
 }

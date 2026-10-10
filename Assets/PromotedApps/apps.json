@@ -3,28 +3,30 @@
   "publisher": "Dynamic Solutions Canada",
   "apps": [
     {
-      "destination": "ms-windows-store://pdp/?ProductId=9PB5FJ08PNVJ",
-      "actionLabel": "View in Store",
-      "name": "Repilot",
-      "blurb": "Make your Copilot key actually useful.",
-      "packageFamilyName": "27766TechnicallyReal.CopilotKeyRemapper_gfb69tsnc4jnp",
-      "icon": "9PB5FJ08PNVJ.png"
-    },
-    {
-      "destination": "ms-windows-store://pdp/?ProductId=9P3ZZBDQ6PJF",
-      "actionLabel": "View in Store",
-      "name": "Little Launcher",
-      "blurb": "Little Launcher puts your apps, websites and web pages one click away, in a flyout that opens from the system tray or the taskbar.",
-      "packageFamilyName": "27766TechnicallyReal.LittleLauncher_gfb69tsnc4jnp",
-      "icon": "9P3ZZBDQ6PJF.png"
-    },
-    {
-      "destination": "ms-windows-store://pdp/?ProductId=9MWC6165N7DH",
-      "actionLabel": "View in Store",
-      "name": "Drive for Immich",
-      "blurb": "Drive for Immich brings your self-hosted Immich photo and video library straight into Windows File Explorer as a native cloud drive. Your whole timeline appears as files you can...",
-      "packageFamilyName": "27766TechnicallyReal.ImmichDrive_gfb69tsnc4jnp",
-      "icon": "9MWC6165N7DH.png"
+      "destination": "https://printstream.app",
+      "actionLabel": "Visit website",
+      "name": "PrintStream",
+      "blurb": "Manage your 3D printers, one or a whole farm, from any device.",
+      "packageFamilyName": null,
+      "icon": "printstream.png",
+      "appId": "printstream",
+      "links": [
+        {
+          "platform": "Android",
+          "url": "https://play.google.com/store/apps/details?id=app.printstream",
+          "label": "Google Play"
+        },
+        {
+          "platform": "Windows",
+          "url": "https://apps.microsoft.com/detail/9N2CJ8BB9RTZ",
+          "label": "Microsoft Store"
+        },
+        {
+          "platform": "Web",
+          "url": "https://printstream.app",
+          "label": "Visit website"
+        }
+      ]
     },
     {
       "destination": "ms-windows-store://pdp/?ProductId=9PCX2XGQ7CJS",
@@ -32,15 +34,73 @@
       "name": "Persistent",
       "blurb": "Reminders that don't give up.",
       "packageFamilyName": "27766TechnicallyReal.Persistent_gfb69tsnc4jnp",
-      "icon": "9PCX2XGQ7CJS.png"
+      "icon": "9PCX2XGQ7CJS.png",
+      "appId": "persistent",
+      "links": [
+        {
+          "platform": "Windows",
+          "url": "https://apps.microsoft.com/detail/9PCX2XGQ7CJS",
+          "label": "Microsoft Store"
+        },
+        {
+          "platform": "Android",
+          "url": "https://play.google.com/store/apps/details?id=ca.dynamicsolutions.persistent",
+          "label": "Google Play"
+        },
+        {
+          "platform": "Web",
+          "url": "https://persistent.dynamic-solutions.ca",
+          "label": "Visit website"
+        }
+      ]
     },
     {
-      "destination": "https://printstream.app",
-      "actionLabel": "Visit website",
-      "name": "PrintStream",
-      "blurb": "Manage your Bambu Lab printers, one or a whole farm, from any device.",
-      "packageFamilyName": null,
-      "icon": "printstream.png"
+      "destination": "ms-windows-store://pdp/?ProductId=9P3ZZBDQ6PJF",
+      "actionLabel": "View in Store",
+      "name": "Little Launcher",
+      "blurb": "Little Launcher puts your apps, websites and web pages one click away, in a flyout that opens from the system tray or the taskbar.",
+      "packageFamilyName": "27766TechnicallyReal.LittleLauncher_gfb69tsnc4jnp",
+      "icon": "9P3ZZBDQ6PJF.png",
+      "appId": "little-launcher",
+      "links": [
+        {
+          "platform": "Windows",
+          "url": "https://apps.microsoft.com/detail/9P3ZZBDQ6PJF",
+          "label": "Microsoft Store"
+        }
+      ]
+    },
+    {
+      "destination": "ms-windows-store://pdp/?ProductId=9MWC6165N7DH",
+      "actionLabel": "View in Store",
+      "name": "ImmichDrive",
+      "blurb": "ImmichDrive brings your self-hosted Immich photo and video library straight into Windows File Explorer as a native cloud drive. Your whole timeline appears as files you can...",
+      "packageFamilyName": "27766TechnicallyReal.ImmichDrive_gfb69tsnc4jnp",
+      "icon": "9MWC6165N7DH.png",
+      "appId": "drive-for-immich",
+      "links": [
+        {
+          "platform": "Windows",
+          "url": "https://apps.microsoft.com/detail/9MWC6165N7DH",
+          "label": "Microsoft Store"
+        }
+      ]
+    },
+    {
+      "destination": "ms-windows-store://pdp/?ProductId=9PB5FJ08PNVJ",
+      "actionLabel": "View in Store",
+      "name": "Repilot",
+      "blurb": "Make your Copilot key actually useful.",
+      "packageFamilyName": "27766TechnicallyReal.CopilotKeyRemapper_gfb69tsnc4jnp",
+      "icon": "9PB5FJ08PNVJ.png",
+      "appId": "repilot",
+      "links": [
+        {
+          "platform": "Windows",
+          "url": "https://apps.microsoft.com/detail/9PB5FJ08PNVJ",
+          "label": "Microsoft Store"
+        }
+      ]
     }
   ]
 }

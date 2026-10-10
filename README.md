@@ -1,6 +1,6 @@
 # technicallyreal-promo
 
-Shared "Our other apps" page for Dynamic Solutions Canada's WinUI 3 apps. Each app bundles this
+Shared "Our other apps" catalog and WinUI 3 page for Dynamic Solutions Canada's apps. Each Windows app bundles this
 as a git submodule; the page cross-promotes the publisher's Store and web apps
 and automatically hides the app it is running inside (matched by package family name).
 
@@ -31,7 +31,8 @@ CI note: checkouts need submodules, e.g. `actions/checkout` with `submodules: tr
 
 ## Updating the promoted apps
 
-1. Add/remove Store product IDs in `ids.json` (optionally set a `blurbOverrides` entry to
+1. Add/remove Store product IDs in `ids.json` and add their stable `appId` and
+   platform `links` under `appOverrides` (optionally set a `blurbOverrides` entry to
    replace the auto-extracted first line of the Store description). Add web apps under
    `externalApps`, including a destination and a repository-owned icon URL.
 2. Run `.\refresh.ps1` - it queries the Store's StoreEdgeFD endpoint and regenerates
@@ -42,3 +43,28 @@ CI note: checkouts need submodules, e.g. `actions/checkout` with `submodules: tr
 `refresh.ps1` is the only thing that talks to the Store backend. The runtime only reads
 the committed GitHub manifest and its icons, so Store endpoint changes cannot break
 shipped apps.
+
+## Web and Android consumers
+
+`catalog.ts` exports the public manifest URL, types, and `parseCatalog` validation.
+Each entry has a stable `appId` for hiding the current product across platforms,
+and `links` containing a platform (`Android`, `Windows`, or `Web`), HTTPS URL,
+and action label. Use HTTPS Microsoft Store listings on Android, rather than the
+Windows-only `ms-windows-store:` scheme. Keep the original `destination`,
+`actionLabel`, and `packageFamilyName` fields for shipped WinUI consumers.
+
+Import the bundled JSON and icons for the first offline visit. Refresh the public
+manifest when the page opens, without credentials, validate before storing it,
+and retain the last successful catalog if the network or validation fails.
+Cache new remote icons for offline use. Show platform labels on every app and
+hide the consuming product by `appId`, rather than comparing display names.
+
+The consumer's checkout and build context must include this submodule. Catalog
+metadata edits go in `ids.json` as well as the generated manifest so a later
+`refresh.ps1` run preserves them.
+
+`appOrder` in `ids.json` sets the shared display order across Store and web apps.
+Every app must appear exactly once. Consumers retain that order when hiding
+their own product. An optional `name` in `appOverrides` pins a publisher-approved
+display name instead of the current Store listing title; stable `appId` values
+remain unchanged when a product is renamed.
